@@ -32,5 +32,27 @@ class Pomelo_Test_AppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
+    func testApiCall() {
+        let expectations = expectation(description: "Alamofire")
+        APIClient.getMostPopularList() { result in
+            switch result {
+            case .success(let response):
+                if !response.results.isEmpty {
+                    XCTAssertNotNil(response.results, "The result array is not empty")
+                } else {
+                    XCTAssertNil(response.results, "The result array is empty")
+                }
+                expectations.fulfill()
+            case .failure(let error):
+                XCTFail("Server response failed : \(error.localizedDescription)")
+                expectations.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 10, handler: { (error) in
+            if let error = error {
+                print("Failed : \(error.localizedDescription)")
+            }
+        })
+    }
 }

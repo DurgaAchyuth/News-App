@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (5.4.3)
+  - Kingfisher (7.1.2)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+
+DEPENDENCIES:
+  - Alamofire (= 5.4.3)
+  - Kingfisher (= 7.1.2)
+  - NVActivityIndicatorView (~> 5.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - NVActivityIndicatorView
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+
+PODFILE CHECKSUM: 10c5a3d33146d1512959f2d005d42c1cd41546d3
+
+COCOAPODS: 1.11.2
