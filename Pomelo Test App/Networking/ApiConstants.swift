@@ -17,7 +17,8 @@ public enum ApiConstants {
     }
 
     enum APIParameterKey {
-        static let apikey = "api-key"
+        static let apiParameterkey = "api-key"
+        static let xApiKey = "" // Please add xApiKey here to acces Api calls
     }
     
     enum AppMessages {
@@ -26,6 +27,7 @@ public enum ApiConstants {
         static let unknowError = "Unknow Error Occured, Please try again!"
         static let appTitle = "App Title Name"
         static let noInternet = "No Internet connection available, Please check it!"
+        static let apiKeyMessage = "Please add xApiKey to access the api calls in application."
     }
 }
 

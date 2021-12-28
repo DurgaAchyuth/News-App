@@ -40,7 +40,7 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - URLRequestConvertible
 
     func asURLRequest() throws -> URLRequest {
-        let queryItems = [URLQueryItem(name: ApiConstants.APIParameterKey.apikey, value: "X-Api-Key")]
+        let queryItems = [URLQueryItem(name: ApiConstants.APIParameterKey.apiParameterkey, value: ApiConstants.APIParameterKey.xApiKey)]
         var urlComps = URLComponents(string: Enviroment.current.baseURL)!
         urlComps.queryItems = queryItems
         let resultUrl = urlComps.url!

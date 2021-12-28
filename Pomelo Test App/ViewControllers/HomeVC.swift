@@ -24,10 +24,18 @@ class HomeVC: UIViewController {
         setupIntialView()
     }
     
-    func setupIntialView() {
-        if APIClient.isNetworkReachable() {
+    func checkApiKey() {
+        if ApiConstants.APIParameterKey.xApiKey.isEmpty {
+            Utility.showAlert(sender: self, title: ApiConstants.AppMessages.appTitle, message: ApiConstants.AppMessages.apiKeyMessage)
+        } else {
             startPreloader()
             callMostPopularApi()
+        }
+    }
+    
+    func setupIntialView() {
+        if APIClient.isNetworkReachable() {
+            checkApiKey()
         } else {
             Utility.showAlert(sender: self, title: ApiConstants.AppMessages.appTitle, message: ApiConstants.AppMessages.noInternet)
         }
